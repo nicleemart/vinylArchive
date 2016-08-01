@@ -3,3 +3,15 @@
 	font-weight: bold;
 	display: none;
 }
+#albumArtist{
+	display: block;
+}
+#submit{
+	display: none;
+}
+#artistInfo{
+	display: none;
+}
+.note{
+	font-style: italic;
+}

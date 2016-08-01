@@ -9,18 +9,29 @@
 	</head>
 
 	<body>
-		<div class="style">
 		<div id="error">Sorry, the album you've entered already exists in our database.</div>
-		<form action="" method="get" name="form">
-			<div class="answersRow">
-			<div>Album:</div>
-			<input type="text" name="album"><br>
-			<div>Artist:</div>
-			<input type="text" name="artist">
+
+			<div id="albumArtist">
+				<form action="" method="get" name="albumArtistForm">
+					<div>Album:</div>
+					<input type="text" name="album"><br>
+					<div>Artist:</div>
+					<input type="text" name="artist">
+					<input type="submit" value="Submit" id="submit">
+				</form>
+			<button id="nextButton">Next</button>
 			</div>
-			<input type="submit" value="Submit" id="submit" style="display:none">
-		</form>
-		</div>
-		<button id ="nextButton">Next</button>
+
+			<div id="artistInfo">
+			Add members<div id="plus">+</div>
+				<form action="" method="get" name="form">
+					<input type="text" name="album" placeholder="Name"><br>
+					<input type="text" name="artist" placeholder="Instrument(s)"><br>
+					<div class="note">Separate multiple instruments with a comma.</div>
+					<input type="submit" value="Submit" id="submit">
+				</form>
+			<button id="nextButton">Next</button>
+			</div>
+
 	</body>
 </html>
