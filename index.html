@@ -25,9 +25,20 @@
 			<div id="artistInfo">
 			Add members<div id="plus">+</div>
 				<form action="" method="get" name="form">
-					<input type="text" name="album" placeholder="Name"><br>
-					<input type="text" name="artist" placeholder="Instrument(s)"><br>
+					<input type="text" name="name" placeholder="Name"><br>
+					<input type="text" name="instruments" placeholder="Instrument(s)"><br>
 					<div class="note">Separate multiple instruments with a comma.</div>
+					<input type="submit" value="Submit" id="submit">
+				</form>
+			<button id="nextButton">Next</button>
+			</div>
+
+			<div id="albumArt">
+			Album images
+				<form action="" method="get" name="form">
+					<select>
+						<option value="cover">Album cover</option>	
+					</select>
 					<input type="submit" value="Submit" id="submit">
 				</form>
 			<button id="nextButton">Next</button>
