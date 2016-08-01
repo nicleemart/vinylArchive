@@ -15,9 +15,12 @@ window.addEventListener("load", function (){
 
 			var x = document.forms["form"]["album"].value
 			var y = document.forms["form"]["artist"].value;
-			if (x == apiResponse.blah.albums.albumTitle && y == apiResponse.blah.artist) {
+
+			for (i = 0; i < apiResponse.blah.albums.length; i++){
+				if (apiResponse.blah.albums[i].albumTitle == x && y == apiResponse.blah.artist){
 				error.style.display = "block";
 				return false;
+				}
 			}
 
 		});
