@@ -16,14 +16,14 @@ window.addEventListener("load", function (){
 			var apiResponse = JSON.parse(e.target.responseText);
 			var error = document.getElementById("error");
 
-			var x = document.forms["albumArtistForm"]["album"].value
-			var y = document.forms["albumArtistForm"]["artist"].value;
+			var album = document.forms["albumArtistForm"]["album"].value
+			var artist = document.forms["albumArtistForm"]["artist"].value;
 
 			for (i = 0; i < apiResponse.blah.albums.length; i++){
-				if (apiResponse.blah.albums[i].albumTitle == x && y == apiResponse.blah.artist){
+				if (apiResponse.blah.albums[i].albumTitle == album && artist == apiResponse.blah.artist){
 					error.style.display = "block";
 				}
-				else if (apiResponse.blah.albums[i].albumTitle != x && y == apiResponse.blah.artist){
+				else if (apiResponse.blah.albums[i].albumTitle != album && artist == apiResponse.blah.artist){
 					albumArtistInput.style.display = "none";
 					albumArtInput.style.display = "block";
 				}
