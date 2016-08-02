@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
     var albumArtistDiv = document.getElementById("albumArtist");
     var artistInfoDiv = document.getElementById("artistInfo");
     var albumArtDiv = document.getElementById("albumArt");
+    var addMember = document.getElementById("plus");
  
     next.addEventListener("click", function(form) {
 
@@ -46,5 +47,16 @@ window.addEventListener("load", function() {
         validate.send();
 
     });
+
+	addMember.addEventListener("click", function() { 	
+
+    	var textbox = document.createElement("input");
+		textbox.type = "text";
+		document.getElementById("theForm").appendChild(textbox);
+
+		var newTextbox = document.getElementById("input2"); 
+  		document.body.insertBefore(textbox, newTextbox); 
+
+	});
 
 });
