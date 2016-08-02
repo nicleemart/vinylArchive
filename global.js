@@ -1,43 +1,61 @@
-window.addEventListener("load", function (){
+window.addEventListener("load", function() {
 
-	var next = document.getElementById("nextButton");
-	var albumArtistInput = document.getElementById("albumArtist");
-	var artistInfoInput = document.getElementById("artistInfo");
-	var albumArtInput = document.getElementById("albumArt");
+    var submit = document.getElementById("submit");
+    var form = document.getElementById("form");
+    var albumArtistDiv = document.getElementById("albumArtist");
+    var artistInfoDiv = document.getElementById("artistInfo");
+    var albumArtDiv = document.getElementById("albumArt");
+    var albumInput = document.getElementById("album");
 
-	next.addEventListener("click", function(){
-		var validate = new XMLHttpRequest();
+    if (sessionStorage.getItem("autosave")) {
 
-		validate.addEventListener("loadstart", function(){
+        albumInput.value = sessionStorage.getItem("autosave");
+    }
 
-		});
+    albumInput.addEventListener("change", function() {
 
-		validate.addEventListener("load", function(e){
-			var apiResponse = JSON.parse(e.target.responseText);
-			var error = document.getElementById("error");
+        sessionStorage.setItem("autosave", albumInput.value);
+    });
 
-			var album = document.forms["albumArtistForm"]["album"].value
-			var artist = document.forms["albumArtistForm"]["artist"].value;
+    submit.addEventListener("click", function(form) {
 
-			for (i = 0; i < apiResponse.blah.albums.length; i++){
-				if (apiResponse.blah.albums[i].albumTitle == album && artist == apiResponse.blah.artist){
-					error.style.display = "block";
-				}
-				else if (apiResponse.blah.albums[i].albumTitle != album && artist == apiResponse.blah.artist){
-					albumArtistInput.style.display = "none";
-					albumArtInput.style.display = "block";
-				}
-				else{
-					albumArtistInput.style.display = "none";
-					artistInfoInput.style.display = "block";
-				}
-			}
+        form.preventDefault();
 
-		});
+        var validate = new XMLHttpRequest();
 
-		validate.open("get", "info.txt");
-		validate.send();
+        validate.addEventListener("loadstart", function() {
 
-	});
+            document.body.style.cursor = "wait";
+
+        });
+
+        validate.addEventListener("load", function(e) {
+
+            document.body.style.cursor = "default";
+
+            var apiResponse = JSON.parse(e.target.responseText);
+            var error = document.getElementById("error");
+
+            var album = document.forms["form"]["album"].value
+            var artist = document.forms["form"]["artist"].value;
+
+            for (i = 0; i < apiResponse.blah.albums.length; i++) {
+                if (apiResponse.blah.albums[i].albumTitle == album && artist == apiResponse.blah.artist) {
+                    error.style.display = "block";
+                } else if (apiResponse.blah.albums[i].albumTitle != album && artist == apiResponse.blah.artist) {
+                    albumArtistDiv.style.display = "none";
+                    albumArtDiv.style.display = "block";
+                } else {
+                    albumArtistDiv.style.display = "none";
+                    artistInfoDiv.style.display = "block";
+                }
+            }
+
+        });
+
+        validate.open("get", "info.txt");
+        validate.send();
+
+    });
 
 });
