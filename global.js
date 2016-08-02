@@ -1,23 +1,12 @@
 window.addEventListener("load", function() {
 
-    var submit = document.getElementById("submit");
+    var next = document.getElementById("next");
     var form = document.getElementById("form");
     var albumArtistDiv = document.getElementById("albumArtist");
     var artistInfoDiv = document.getElementById("artistInfo");
     var albumArtDiv = document.getElementById("albumArt");
-    var albumInput = document.getElementById("album");
-
-    if (sessionStorage.getItem("autosave")) {
-
-        albumInput.value = sessionStorage.getItem("autosave");
-    }
-
-    albumInput.addEventListener("change", function() {
-
-        sessionStorage.setItem("autosave", albumInput.value);
-    });
-
-    submit.addEventListener("click", function(form) {
+ 
+    next.addEventListener("click", function(form) {
 
         form.preventDefault();
 
@@ -36,13 +25,13 @@ window.addEventListener("load", function() {
             var apiResponse = JSON.parse(e.target.responseText);
             var error = document.getElementById("error");
 
-            var album = document.forms["form"]["album"].value
-            var artist = document.forms["form"]["artist"].value;
+                var albumInput = document.forms["form"]["album"].value;
+    			var artistInput = document.forms["form"]["artist"].value;
 
             for (i = 0; i < apiResponse.blah.albums.length; i++) {
-                if (apiResponse.blah.albums[i].albumTitle == album && artist == apiResponse.blah.artist) {
+                if (apiResponse.blah.albums[i].albumTitle == albumInput && artistInput == apiResponse.blah.artist) {
                     error.style.display = "block";
-                } else if (apiResponse.blah.albums[i].albumTitle != album && artist == apiResponse.blah.artist) {
+                } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
                     albumArtDiv.style.display = "block";
                 } else {
