@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
     var form = document.getElementById("form");
     var albumArtistDiv = document.getElementById("albumArtist");
     // var addMember = document.getElementById("plus");
- 
+
     next.addEventListener("click", function(form) {
 
         form.preventDefault();
@@ -24,8 +24,8 @@ window.addEventListener("load", function() {
             var apiResponse = JSON.parse(e.target.responseText);
             var error = document.getElementById("error");
 
-                var albumInput = document.forms["form"]["album"].value;
-    			var artistInput = document.forms["form"]["artist"].value;
+            var albumInput = document.forms["form"]["album"].value;
+            var artistInput = document.forms["form"]["artist"].value;
 
             for (i = 0; i < apiResponse.blah.albums.length; i++) {
                 if (apiResponse.blah.albums[i].albumTitle == albumInput && artistInput == apiResponse.blah.artist) {
@@ -35,13 +35,14 @@ window.addEventListener("load", function() {
                     nextButton.style.display = "none";
                     var albumArtDiv = document.createElement("albumArt");
                     albumArtDiv.id = "albumArt";
-          			albumArtDiv.innerHTML = "Album images" + "<br><select><option value='cover'>Album Cover</option></select>";
-        		  	document.getElementById("wrapper").appendChild(albumArtDiv);
+                    albumArtDiv.innerHTML = "Album images" + "<br><select><option value='cover'>Album Cover</option></select>";
+                    document.getElementById("wrapper").appendChild(albumArtDiv);
                 } else {
                     albumArtistDiv.style.display = "none";
+                    nextButton.style.display = "none";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "Add members" + "<br><input type='text' name='name' placeholder='Name'><br>";
+                    artistInfoDiv.innerHTML = "Member info" + "<br><select><option value='cover'>Album Cover</option></select>";
                     document.getElementById("wrapper").appendChild(artistInfoDiv);
                 }
             }
@@ -53,15 +54,15 @@ window.addEventListener("load", function() {
 
     });
 
-	// addMember.addEventListener("click", function() { 	
+    // addMember.addEventListener("click", function() {     
 
- //    	var textbox = document.createElement("input");
-	// 	textbox.type = "text";
-	// 	document.getElementById("theForm").appendChild(textbox);
+    //      var textbox = document.createElement("input");
+    //  textbox.type = "text";
+    //  document.getElementById("theForm").appendChild(textbox);
 
-	// 	var newTextbox = document.getElementById("input2"); 
- //  		document.body.insertBefore(textbox, newTextbox); 
+    //  var newTextbox = document.getElementById("input2"); 
+    //          document.body.insertBefore(textbox, newTextbox); 
 
-	// });
+    // });
 
 });
