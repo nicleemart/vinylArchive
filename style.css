@@ -9,10 +9,17 @@
 #albumArtist{
 	display: block;
 }
-.note{
+#addMembersNote{
 	font-style: italic;
+	display: none;
 }
 #plus{
 	cursor: pointer;
 	width: 20px;
+}
+#albumImagesText{
+	display: none;
+}
+#addMembersText{
+	display: none;
 }

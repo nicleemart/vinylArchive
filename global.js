@@ -3,6 +3,9 @@ window.addEventListener("load", function() {
     var next = document.getElementById("nextButton");
     var form = document.getElementById("form");
     var albumArtistDiv = document.getElementById("albumArtist");
+    var albumImagesText = document.getElementById("albumImagesText");
+    var addMembersText = document.getElementById("addMembersText");
+    var addMembersNote = document.getElementById("addMembersNote");
     // var addMember = document.getElementById("plus");
 
     next.addEventListener("click", function(form) {
@@ -33,21 +36,21 @@ window.addEventListener("load", function() {
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
                     nextButton.style.display = "none";
+                    albumImagesText.style.display = "block";
                     var albumArtDiv = document.createElement("albumArt");
                     albumArtDiv.id = "albumArt";
-                    albumArtDiv.innerHTML = "Album images" + "<br><select><option value='cover'>Album Cover</option></select>";
+                    albumArtDiv.innerHTML = "<select><option value='cover'>Album Cover</option></select>";
                     document.getElementById("wrapper").appendChild(albumArtDiv);
+
                 } else {
                     albumArtistDiv.style.display = "none";
                     nextButton.style.display = "none";
+                    addMembersText.style.display = "block";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "Add member" + "<br><input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
+                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
                     document.getElementById("wrapper").appendChild(artistInfoDiv);
-                    var addMemberDiv = document.createElement("addMember");
-                    addMemberDiv.id = "addMember";
-                    addMemberDiv.innerHTML = "+";
-                    document.getElementById("parent").appendChild(addMemberDiv);
+                    addMembersNote.style.display = "block";
                 }
             }
 
