@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
     var albumImagesText = document.getElementById("albumImagesText");
     var addMembersText = document.getElementById("addMembersText");
     var addMembersNote = document.getElementById("addMembersNote");
-    // var addMember = document.getElementById("plus");
+    var addMember = document.getElementById("plus");
 
     next.addEventListener("click", function(form) {
 
@@ -61,15 +61,15 @@ window.addEventListener("load", function() {
 
     });
 
-    // addMember.addEventListener("click", function() {     
+    addMember.addEventListener("click", function() {  
 
-    //      var textbox = document.createElement("input");
-    //  textbox.type = "text";
-    //  document.getElementById("theForm").appendChild(textbox);
+        var textbox = document.createElement("input");
+        textbox.type = "text";
+         document.getElementById("form").appendChild(textbox);
 
-    //  var newTextbox = document.getElementById("input2"); 
-    //          document.body.insertBefore(textbox, newTextbox); 
+     var newTextbox = document.getElementById("input2"); 
+            document.body.insertBefore(textbox, newTextbox); 
 
-    // });
+    });
 
 });
