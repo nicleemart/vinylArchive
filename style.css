@@ -9,9 +9,6 @@
 #albumArtist{
 	display: block;
 }
-#artistInfo{
-	display: none;
-}
 .note{
 	font-style: italic;
 }

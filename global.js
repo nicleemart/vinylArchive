@@ -42,8 +42,12 @@ window.addEventListener("load", function() {
                     nextButton.style.display = "none";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "Member info" + "<br><select><option value='cover'>Album Cover</option></select>";
+                    artistInfoDiv.innerHTML = "Add member" + "<br><input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
                     document.getElementById("wrapper").appendChild(artistInfoDiv);
+                    var addMemberDiv = document.createElement("addMember");
+                    addMemberDiv.id = "addMember";
+                    addMemberDiv.innerHTML = "+";
+                    document.getElementById("parent").appendChild(addMemberDiv);
                 }
             }
 
