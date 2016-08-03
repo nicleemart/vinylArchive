@@ -7,6 +7,7 @@ window.addEventListener("load", function() {
     var addMembersText = document.getElementById("addMembersText");
     var addMembersNote = document.getElementById("addMembersNote");
     var addMember = document.getElementById("plus");
+    var submit = document.getElementById("submit");
 
     next.addEventListener("click", function(form) {
 
@@ -63,12 +64,9 @@ window.addEventListener("load", function() {
 
     addMember.addEventListener("click", function() {  
 
-        var textbox = document.createElement("input");
-        textbox.type = "text";
-         document.getElementById("form").appendChild(textbox);
-
-     var newTextbox = document.getElementById("input2"); 
-            document.body.insertBefore(textbox, newTextbox); 
+        var addMemberDiv = document.createElement("addAdditionalMember");
+        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
+        document.getElementById("wrapper").appendChild(addMemberDiv);
 
     });
 
