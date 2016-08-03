@@ -1,11 +1,9 @@
 window.addEventListener("load", function() {
 
-    var next = document.getElementById("next");
+    var next = document.getElementById("nextButton");
     var form = document.getElementById("form");
     var albumArtistDiv = document.getElementById("albumArtist");
-    var artistInfoDiv = document.getElementById("artistInfo");
-    var albumArtDiv = document.getElementById("albumArt");
-    var addMember = document.getElementById("plus");
+    // var addMember = document.getElementById("plus");
  
     next.addEventListener("click", function(form) {
 
@@ -34,7 +32,9 @@ window.addEventListener("load", function() {
                     error.style.display = "block";
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
-                    albumArtDiv.style.display = "block";
+                    var newdiv = document.createElement("albumArt");
+          			newdiv.innerHTML = "Album images" + " <br><select><option value='cover'>Album Cover</option></select>";
+        		  	document.getElementsByTagName("body")[0].appendChild(newdiv);
                 } else {
                     albumArtistDiv.style.display = "none";
                     artistInfoDiv.style.display = "block";
@@ -48,15 +48,15 @@ window.addEventListener("load", function() {
 
     });
 
-	addMember.addEventListener("click", function() { 	
+	// addMember.addEventListener("click", function() { 	
 
-    	var textbox = document.createElement("input");
-		textbox.type = "text";
-		document.getElementById("theForm").appendChild(textbox);
+ //    	var textbox = document.createElement("input");
+	// 	textbox.type = "text";
+	// 	document.getElementById("theForm").appendChild(textbox);
 
-		var newTextbox = document.getElementById("input2"); 
-  		document.body.insertBefore(textbox, newTextbox); 
+	// 	var newTextbox = document.getElementById("input2"); 
+ //  		document.body.insertBefore(textbox, newTextbox); 
 
-	});
+	// });
 
 });

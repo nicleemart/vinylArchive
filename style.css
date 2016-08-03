@@ -3,6 +3,9 @@
 	font-weight: bold;
 	display: none;
 }
+#submit{
+	display: none;
+}
 #albumArtist{
 	display: block;
 }
@@ -15,7 +18,4 @@
 #plus{
 	cursor: pointer;
 	width: 20px;
-}
-#albumArt{
-	display: none;
 }
