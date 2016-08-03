@@ -33,12 +33,16 @@ window.addEventListener("load", function() {
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
                     nextButton.style.display = "none";
-                    var newdiv = document.createElement("albumArt");
-          			newdiv.innerHTML = "Album images" + " <br><select><option value='cover'>Album Cover</option></select>";
-        		  	document.getElementById("wrapper").appendChild(newdiv);
+                    var albumArtDiv = document.createElement("albumArt");
+                    albumArtDiv.id = "albumArt";
+          			albumArtDiv.innerHTML = "Album images" + "<br><select><option value='cover'>Album Cover</option></select>";
+        		  	document.getElementById("wrapper").appendChild(albumArtDiv);
                 } else {
                     albumArtistDiv.style.display = "none";
-                    artistInfoDiv.style.display = "block";
+                    var artistInfoDiv = document.createElement("artistInfo");
+                    artistInfoDiv.id = "artistInfo";
+                    artistInfoDiv.innerHTML = "Add members" + "<br><input type='text' name='name' placeholder='Name'><br>";
+                    document.getElementById("wrapper").appendChild(artistInfoDiv);
                 }
             }
 
