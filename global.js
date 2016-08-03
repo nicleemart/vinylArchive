@@ -32,9 +32,10 @@ window.addEventListener("load", function() {
                     error.style.display = "block";
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
+                    nextButton.style.display = "none";
                     var newdiv = document.createElement("albumArt");
           			newdiv.innerHTML = "Album images" + " <br><select><option value='cover'>Album Cover</option></select>";
-        		  	document.getElementsByTagName("body")[0].appendChild(newdiv);
+        		  	document.getElementById("wrapper").appendChild(newdiv);
                 } else {
                     albumArtistDiv.style.display = "none";
                     artistInfoDiv.style.display = "block";
