@@ -51,11 +51,13 @@ window.addEventListener("load", function() {
 
                     var addMember = document.createElement("input");
                     addMember.setAttribute("type", "text");
+                    addMember.setAttribute("placeholder", "Name");
                     addMember.id = "newMember";
                     addMember.className = "memberInput";
                     document.getElementById("wrapper").appendChild(addMember);
 
                     var addInstrument = document.createElement("input");
+                    addInstrument.setAttribute("placeholder", "Instrument(s)");
                     addInstrument.setAttribute("type", "text");
                     addInstrument.id = "newInstrument";
                     addInstrument.className = "memberInput";
@@ -76,19 +78,26 @@ window.addEventListener("load", function() {
 
         var x = document.getElementById("newMember");
         var y = document.getElementById("newInstrument");
+        var memberInput = document.getElementsByClassName("memberInput");
+
+        var n = memberInput.length;
+
+        // memberInput[n-1].style.display = "none";
 
         x.style.display = "none";
         y.style.display = "none";
 
-        var addAdditonalMember = document.createElement("input");
-        addAdditonalMember.setAttribute("type", "text");
-        addAdditonalMember.className = "memberInput";
-        document.getElementById("wrapper").appendChild(addAdditonalMember);
+        var addAdditionaMember = document.createElement("input");
+        addAdditionaMember.setAttribute("type", "text");
+        addAdditionaMember.setAttribute("placeholder", "Name");
+        addAdditionaMember.className = "memberInput";
+        document.getElementById("wrapper").appendChild(addAdditionaMember);
 
-        var addAdditonalInstrument = document.createElement("input");
-        addAdditonalInstrument.setAttribute("type", "text");
-        addAdditonalInstrument.className = "memberInput";
-        document.getElementById("wrapper").appendChild(addAdditonalInstrument);
+        var addAdditionaInstrument = document.createElement("input");
+        addAdditionaInstrument.setAttribute("placeholder", "Instrument(s)");
+        addAdditionaInstrument.setAttribute("type", "text");
+        addAdditionaInstrument.className = "memberInput";
+        document.getElementById("wrapper").appendChild(addAdditionaInstrument);
 
         // var n = addMemberDiv.length;
         // addMemberDiv[n-1].style.display = "none";
