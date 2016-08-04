@@ -23,3 +23,7 @@
 #addMembersText{
 	display: none;
 }
+.memberInput{
+	display: flex;
+	flex-direction: column;
+}

@@ -6,7 +6,7 @@ window.addEventListener("load", function() {
     var albumImagesText = document.getElementById("albumImagesText");
     var addMembersText = document.getElementById("addMembersText");
     var addMembersNote = document.getElementById("addMembersNote");
-    var addMember = document.getElementById("plus");
+    var plusMember = document.getElementById("plus");
     var submit = document.getElementById("submit");
     var wrapper = document.getElementById("wrapper");
 
@@ -48,10 +48,19 @@ window.addEventListener("load", function() {
                     albumArtistDiv.style.display = "none";
                     submit.style.display = "none";
                     addMembersText.style.display = "block";
-                    var artistInfoDiv = document.createElement("artistInfo");
-                    artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)'><br>";
-                    document.getElementById("wrapper").appendChild(artistInfoDiv);
+
+                    var addMember = document.createElement("input");
+                    addMember.setAttribute("type", "text");
+                    addMember.id = "newMember";
+                    addMember.className = "memberInput";
+                    document.getElementById("wrapper").appendChild(addMember);
+
+                    var addInstrument = document.createElement("input");
+                    addInstrument.setAttribute("type", "text");
+                    addInstrument.id = "newInstrument";
+                    addInstrument.className = "memberInput";
+                    document.getElementById("wrapper").appendChild(addInstrument);
+
                     addMembersNote.style.display = "block";
                 }
             }
@@ -63,19 +72,26 @@ window.addEventListener("load", function() {
 
     });
 
-    addMember.addEventListener("click", function() {
+    plusMember.addEventListener("click", function() {
 
-        artistInfo.style.display = "none";
+        var x = document.getElementById("newMember");
+        var y = document.getElementById("newInstrument");
 
-        var addMemberDiv = document.createElement("addAdditionalMember");
-        addMemberDiv.className = "addMember";
-        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)'><br>";
-        document.getElementById("wrapper").appendChild(addMemberDiv);
+        x.style.display = "none";
+        y.style.display = "none";
 
-        var n = addMemberDiv.length;
-        addMemberDiv[n-1].style.display = "none";
+        var addAdditonalMember = document.createElement("input");
+        addAdditonalMember.setAttribute("type", "text");
+        addAdditonalMember.className = "memberInput";
+        document.getElementById("wrapper").appendChild(addAdditonalMember);
+
+        var addAdditonalInstrument = document.createElement("input");
+        addAdditonalInstrument.setAttribute("type", "text");
+        addAdditonalInstrument.className = "memberInput";
+        document.getElementById("wrapper").appendChild(addAdditonalInstrument);
+
+        // var n = addMemberDiv.length;
+        // addMemberDiv[n-1].style.display = "none";
     });
-
-    albumArtDiv
 
 });
