@@ -8,6 +8,7 @@ window.addEventListener("load", function() {
     var addMembersNote = document.getElementById("addMembersNote");
     var addMember = document.getElementById("plus");
     var submit = document.getElementById("submit");
+    var wrapper = document.getElementById("wrapper");
 
     next.addEventListener("click", function(form) {
 
@@ -49,7 +50,7 @@ window.addEventListener("load", function() {
                     addMembersText.style.display = "block";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
+                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name' class='members'><br><input type='text' name='instruments' placeholder='Instrument(s)' class='instruments'><br>";
                     document.getElementById("wrapper").appendChild(artistInfoDiv);
                     addMembersNote.style.display = "block";
                 }
@@ -62,12 +63,17 @@ window.addEventListener("load", function() {
 
     });
 
-    addMember.addEventListener("click", function() {  
+    addMember.addEventListener("click", function() {
+
+        var member = document.getElementsByClassName("members");
+        var instrument = document.getElementsByClassName("instruments");
+        var n = member.length;
+        member[n-1].style.display = "none";
+        instrument[n-1].style.display = "none";
 
         var addMemberDiv = document.createElement("addAdditionalMember");
-        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)''><br>";
+        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name' class='members'><br><input type='text' name='instruments' placeholder='Instrument(s)' class='instruments'><br>";
         document.getElementById("wrapper").appendChild(addMemberDiv);
-
     });
 
 });
