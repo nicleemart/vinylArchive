@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
     var submit = document.getElementById("submit");
     var wrapper = document.getElementById("wrapper");
 
-    next.addEventListener("click", function(form) {
+    submit.addEventListener("click", function(form) {
 
         form.preventDefault();
 
@@ -37,7 +37,7 @@ window.addEventListener("load", function() {
                     error.style.display = "block";
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
-                    nextButton.style.display = "none";
+                    submit.style.display = "none";
                     albumImagesText.style.display = "block";
                     var albumArtDiv = document.createElement("albumArt");
                     albumArtDiv.id = "albumArt";
@@ -46,7 +46,7 @@ window.addEventListener("load", function() {
 
                 } else {
                     albumArtistDiv.style.display = "none";
-                    nextButton.style.display = "none";
+                    submit.style.display = "none";
                     addMembersText.style.display = "block";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
@@ -75,5 +75,7 @@ window.addEventListener("load", function() {
         var n = addMemberDiv.length;
         addMemberDiv[n-1].style.display = "none";
     });
+
+    albumArtDiv
 
 });
