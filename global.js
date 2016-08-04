@@ -50,7 +50,7 @@ window.addEventListener("load", function() {
                     addMembersText.style.display = "block";
                     var artistInfoDiv = document.createElement("artistInfo");
                     artistInfoDiv.id = "artistInfo";
-                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name' class='members'><br><input type='text' name='instruments' placeholder='Instrument(s)' class='instruments'><br>";
+                    artistInfoDiv.innerHTML = "<input type='text' name='name' placeholder='Name'><br><input type='text' name='instruments' placeholder='Instrument(s)'><br>";
                     document.getElementById("wrapper").appendChild(artistInfoDiv);
                     addMembersNote.style.display = "block";
                 }
@@ -65,14 +65,13 @@ window.addEventListener("load", function() {
 
     addMember.addEventListener("click", function() {
 
-        var member = document.getElementsByClassName("members");
-        var instrument = document.getElementsByClassName("instruments");
-        var n = member.length;
-        member[n-1].style.display = "none";
-        instrument[n-1].style.display = "none";
+        artistInfo.style.display = "none";
+        // var n = member.length;
+        // member[n-1].style.display = "none";
+        // instrument[n-1].style.display = "none";
 
         var addMemberDiv = document.createElement("addAdditionalMember");
-        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name' class='members'><br><input type='text' name='instruments' placeholder='Instrument(s)' class='instruments'><br>";
+        addMemberDiv.innerHTML = "<input type='text' name='name' placeholder='Name' class='members2'><br><input type='text' name='instruments2' placeholder='Instrument(s)' class='instruments'><br>";
         document.getElementById("wrapper").appendChild(addMemberDiv);
     });
 
