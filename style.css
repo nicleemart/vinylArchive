@@ -3,9 +3,10 @@
 	font-weight: bold;
 	display: none;
 }
-/*#submit{
-	display: none;
-}*/
+#submit{
+margin-top: 5px;
+margin-bottom: 5px;
+}
 #albumArtist{
 	display: block;
 }

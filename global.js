@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
     var plusMember = document.getElementById("plus");
     var submit = document.getElementById("submit");
     var wrapper = document.getElementById("wrapper");
+    var memberNumber = 0;
 
     submit.addEventListener("click", function(form) {
 
@@ -37,7 +38,6 @@ window.addEventListener("load", function() {
                     error.style.display = "block";
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
-                    submit.style.display = "none";
                     albumImagesText.style.display = "block";
                     var albumArtDiv = document.createElement("albumArt");
                     albumArtDiv.id = "albumArt";
@@ -46,20 +46,21 @@ window.addEventListener("load", function() {
 
                 } else {
                     albumArtistDiv.style.display = "none";
-                    submit.style.display = "none";
                     addMembersText.style.display = "block";
 
                     var addMember = document.createElement("input");
                     addMember.setAttribute("type", "text");
                     addMember.setAttribute("placeholder", "Name");
-                    addMember.id = "newMember";
+                    addMember.setAttribute("name", "member");
+                    addMember.id = "newMember" + memberNumber;
                     addMember.className = "memberInput";
                     document.getElementById("wrapper").appendChild(addMember);
 
                     var addInstrument = document.createElement("input");
-                    addInstrument.setAttribute("placeholder", "Instrument(s)");
                     addInstrument.setAttribute("type", "text");
-                    addInstrument.id = "newInstrument";
+                    addInstrument.setAttribute("placeholder", "Instrument(s)");
+                    addInstrument.setAttribute("name", "instrument");
+                    addInstrument.id = "newInstrument" + memberNumber;
                     addInstrument.className = "memberInput";
                     document.getElementById("wrapper").appendChild(addInstrument);
 
@@ -76,31 +77,31 @@ window.addEventListener("load", function() {
 
     plusMember.addEventListener("click", function() {
 
-        var x = document.getElementById("newMember");
-        var y = document.getElementById("newInstrument");
+        var x = document.getElementById("newMember" + memberNumber);
+        var y = document.getElementById("newInstrument" + memberNumber);
         var memberInput = document.getElementsByClassName("memberInput");
 
-        var n = memberInput.length;
-
-        // memberInput[n-1].style.display = "none";
+        memberNumber++;
 
         x.style.display = "none";
         y.style.display = "none";
 
-        var addAdditionaMember = document.createElement("input");
-        addAdditionaMember.setAttribute("type", "text");
-        addAdditionaMember.setAttribute("placeholder", "Name");
-        addAdditionaMember.className = "memberInput";
-        document.getElementById("wrapper").appendChild(addAdditionaMember);
+        var addAdditionalMember = document.createElement("input");
+        addAdditionalMember.setAttribute("type", "text");
+        addAdditionalMember.setAttribute("placeholder", "Name");
+        addAdditionalMember.setAttribute("name", "member" + memberNumber);
+        addAdditionalMember.className = "memberInput";
+        addAdditionalMember.id = "newMember" + memberNumber;
 
-        var addAdditionaInstrument = document.createElement("input");
-        addAdditionaInstrument.setAttribute("placeholder", "Instrument(s)");
-        addAdditionaInstrument.setAttribute("type", "text");
-        addAdditionaInstrument.className = "memberInput";
-        document.getElementById("wrapper").appendChild(addAdditionaInstrument);
+        document.getElementById("wrapper").appendChild(addAdditionalMember);
 
-        // var n = addMemberDiv.length;
-        // addMemberDiv[n-1].style.display = "none";
+        var addAdditionalInstrument = document.createElement("input");
+        addAdditionalInstrument.setAttribute("type", "text");
+        addAdditionalInstrument.setAttribute("placeholder", "Instrument(s)");
+        addAdditionalInstrument.setAttribute("name", "Instrument" + memberNumber);
+        addAdditionalInstrument.className = "memberInput";
+        addAdditionalInstrument.id = "newInstrument" + memberNumber;
+        document.getElementById("wrapper").appendChild(addAdditionalInstrument);
     });
 
 });
