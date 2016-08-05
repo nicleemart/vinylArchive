@@ -1,6 +1,5 @@
 window.addEventListener("load", function() {
 
-    var next = document.getElementById("nextButton");
     var form = document.getElementById("form");
     var albumArtistDiv = document.getElementById("albumArtist");
     var albumImagesText = document.getElementById("albumImagesText");
