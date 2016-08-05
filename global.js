@@ -9,6 +9,7 @@ window.addEventListener("load", function() {
     var submit = document.getElementById("submit");
     var wrapper = document.getElementById("wrapper");
     var memberNumber = 0;
+    var submit2 = document.getElementById("submit2");
 
     submit.addEventListener("click", function(form) {
 
@@ -38,6 +39,7 @@ window.addEventListener("load", function() {
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
                     albumImagesText.style.display = "block";
+                    submit2.style.display = "block";
                     var albumArtDiv = document.createElement("albumArt");
                     albumArtDiv.id = "albumArt";
                     albumArtDiv.innerHTML = "<select><option value='cover'>Album Cover</option></select>";
@@ -46,7 +48,7 @@ window.addEventListener("load", function() {
                 } else {
                     albumArtistDiv.style.display = "none";
                     addMembersText.style.display = "block";
-
+                    submit2.style.display = "block";
                     var addMember = document.createElement("input");
                     addMember.setAttribute("type", "text");
                     addMember.setAttribute("placeholder", "Name");
