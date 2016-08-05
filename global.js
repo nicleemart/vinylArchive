@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
     var memberNumber = 0;
     var submit2 = document.getElementById("submit2");
     var submit3 = document.getElementById("submit3");
+    var submit4 = document.getElementById("submit4");
 
     submit.addEventListener("click", function(form) {
 
@@ -40,7 +41,8 @@ window.addEventListener("load", function() {
                 } else if (apiResponse.blah.albums[i].albumTitle != albumInput && artistInput == apiResponse.blah.artist) {
                     albumArtistDiv.style.display = "none";
                     albumImagesText.style.display = "block";
-                    submit2.style.display = "block";
+                    submit4.style.display = "block";
+
                     var selectAlbumArt = document.createElement("select");
                     selectAlbumArt.setAttribute("value", "Album Cover");
                     selectAlbumArt.id = "albumArt";
@@ -129,13 +131,13 @@ window.addEventListener("load", function() {
             addLocation.className = "memberInput";
             document.getElementById("wrapper").appendChild(addLocation);
 
-            var addAlbumImage = document.createElement("input");
-            addAlbumImage.setAttribute("type", "file");
-            addAlbumImage.setAttribute("placeholder", "Choose File");
-            addAlbumImage.setAttribute("name", "image");
-            addAlbumImage.id = "image";
-            addAlbumImage.className = "memberInput";
-            document.getElementById("wrapper").appendChild(addAlbumImage);
+            var addArtistImage = document.createElement("input");
+            addArtistImage.setAttribute("type", "file");
+            addArtistImage.setAttribute("placeholder", "Choose File");
+            addArtistImage.setAttribute("name", "artistImage");
+            addArtistImage.id = "artistImage";
+            addArtistImage.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addArtistImage);
 
     });
         submit3.addEventListener("click", function(form) {
@@ -143,16 +145,61 @@ window.addEventListener("load", function() {
         form.preventDefault();
 
             var addLocationInput = document.getElementById("location");
-            var addAlbumImageInput = document.getElementById("image");
+            var addArtistImageInput = document.getElementById("artistImage");
 
             addLocationInput.style.display = "none";
-            addAlbumImageInput.style.display = "none";
+            addArtistImageInput.style.display = "none";
+            submit3.style.display = "none";
             albumImagesText.style.display = "block";
+            submit4.style.display = "block";
 
             var selectAlbumArt = document.createElement("select");
             selectAlbumArt.setAttribute("value", "Album Cover");
             selectAlbumArt.id = "albumArt";
             document.getElementById("wrapper").appendChild(selectAlbumArt);
+
+            var addAlbumImage = document.createElement("input");
+            addAlbumImage.setAttribute("type", "file");
+            addAlbumImage.setAttribute("placeholder", "Choose File");
+            addAlbumImage.setAttribute("name", "albumImage");
+            addAlbumImage.id = "albumImage";
+            addAlbumImage.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addAlbumImage);
+
+    });
+
+        submit4.addEventListener("click", function(form) {
+
+        form.preventDefault();
+
+            var selectAlbumArtInput = document.getElementById("albumArt");
+            var addAlbumImageInput = document.getElementById("albumImage");
+
+            selectAlbumArtInput.style.display = "none";
+            addAlbumImageInput.style.display = "none";
+            albumImagesText.style.display = "none";
+            submit4.style.display = "none";
+
+            var addAlbumGenre = document.createElement("input");
+            addAlbumGenre.setAttribute("type", "text");
+            addAlbumGenre.setAttribute("placeholder", "Album genre");
+            addAlbumGenre.setAttribute("name", "genre");
+            addAlbumGenre.id = "albumGenre";
+            addAlbumGenre.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addAlbumGenre);
+
+            var addReleaseDate = document.createElement("input");
+            addReleaseDate.setAttribute("type", "text");
+            addReleaseDate.setAttribute("placeholder", "Release date");
+            addReleaseDate.setAttribute("name", "date");
+            addReleaseDate.id = "releaseDate";
+            addReleaseDate.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addReleaseDate);
+
+            var selectAlbumFormat = document.createElement("select");
+            selectAlbumFormat.setAttribute("value", "Album Format");
+            selectAlbumFormat.id = "albumFormat";
+            document.getElementById("wrapper").appendChild(selectAlbumFormat);
 
     });
 
