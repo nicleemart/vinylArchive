@@ -116,6 +116,8 @@ window.addEventListener("load", function() {
             currentInstrumentInput.style.display = "none";
             addMembersText.style.display = "none";
             addMembersNote.style.display = "none";
+            submit2.style.display = "none";
+            submit3.style.display = "block";
 
             var addLocation = document.createElement("input");
             addLocation.setAttribute("type", "text");
