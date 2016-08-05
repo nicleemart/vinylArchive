@@ -10,6 +10,7 @@ window.addEventListener("load", function() {
     var wrapper = document.getElementById("wrapper");
     var memberNumber = 0;
     var submit2 = document.getElementById("submit2");
+    var submit3 = document.getElementById("submit3");
 
     submit.addEventListener("click", function(form) {
 
@@ -40,10 +41,10 @@ window.addEventListener("load", function() {
                     albumArtistDiv.style.display = "none";
                     albumImagesText.style.display = "block";
                     submit2.style.display = "block";
-                    var albumArtDiv = document.createElement("albumArt");
-                    albumArtDiv.id = "albumArt";
-                    albumArtDiv.innerHTML = "<select><option value='cover'>Album Cover</option></select>";
-                    document.getElementById("wrapper").appendChild(albumArtDiv);
+                    var selectAlbumArt = document.createElement("select");
+                    selectAlbumArt.setAttribute("value", "Album Cover");
+                    selectAlbumArt.id = "albumArt";
+                    document.getElementById("wrapper").appendChild(selectAlbumArt);
 
                 } else {
                     albumArtistDiv.style.display = "none";
@@ -82,6 +83,7 @@ window.addEventListener("load", function() {
         var x = document.getElementById("newMember" + memberNumber);
         var y = document.getElementById("newInstrument" + memberNumber);
         var memberInput = document.getElementsByClassName("memberInput");
+
 
         memberNumber++;
 
@@ -134,6 +136,23 @@ window.addEventListener("load", function() {
             addAlbumImage.id = "image";
             addAlbumImage.className = "memberInput";
             document.getElementById("wrapper").appendChild(addAlbumImage);
+
+    });
+        submit3.addEventListener("click", function(form) {
+
+        form.preventDefault();
+
+            var addLocationInput = document.getElementById("location");
+            var addAlbumImageInput = document.getElementById("image");
+
+            addLocationInput.style.display = "none";
+            addAlbumImageInput.style.display = "none";
+            albumImagesText.style.display = "block";
+
+            var selectAlbumArt = document.createElement("select");
+            selectAlbumArt.setAttribute("value", "Album Cover");
+            selectAlbumArt.id = "albumArt";
+            document.getElementById("wrapper").appendChild(selectAlbumArt);
 
     });
 
