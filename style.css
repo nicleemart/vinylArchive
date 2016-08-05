@@ -3,19 +3,59 @@
 	font-weight: bold;
 	display: none;
 }
+#submit{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#submit2{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: none;
+}
+#submit3{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: none;
+}
+#submit4{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: none;
+}
+#submit5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: none;
+}
 #albumArtist{
 	display: block;
 }
-#artistInfo{
-	display: none;
-}
-.note{
+#addMembersNote{
 	font-style: italic;
+	display: none;
 }
 #plus{
 	cursor: pointer;
 	width: 20px;
 }
-#albumArt{
+#albumImagesText{
 	display: none;
+}
+#artistImage{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+#addMembersText{
+	display: none;
+}
+.memberInput{
+	display: flex;
+	flex-direction: column;
+}
+#locationText{
+	display: none;
+}
+#image{
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

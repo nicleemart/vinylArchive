@@ -9,40 +9,43 @@
 	</head>
 
 	<body>
-		<div id="error">Sorry, the album you've entered already exists in our database.</div>
+		<div id="parent">
+			<div id="error">
+				Sorry, the album you've entered already exists in our database.
+			</div>
+			<div id="addMembersText">
+				Add members
+				<div id="plus">
+					+
+				</div>
+			</div>
+			<div id="albumImagesText">
+				Album images
+			</div>
+			<div id="locationText">
+				Location
+			</div>
+		</div>
 
-			<div id="albumArtist">
-				<form action="" method="get" name="form">
+		<form action="" method="get" name="form" id="form">
+			<div id="wrapper">
+				<div id="albumArtist">
 					<div>Album:</div>
 					<input type="text" name="album" id="name"><br>
 					<div>Artist:</div>
 					<input type="text" name="artist" id="artist"><br>
-					<input type="submit" value="Next" id="next">
-				</form>
-			<!-- <button id="nextButton">Next</button> -->
+					<input type="submit" value="Next" name="action" id="submit">
+				</div>
 			</div>
+		<!-- Will give submit buttons more descriptive id's -->
+			<input type="submit" value="Next" name="action" id="submit2">
+			<input type="submit" value="Next" name="action" id="submit3">
+			<input type="submit" value="Next" name="action" id="submit4">
+			<input type="submit" value="Next" name="action" id="submit5">
+		</form>
 
-			<div id="artistInfo">
-			Add members<div id="plus">+</div>
-				<form action="" method="get" name="form">
-					<input type="text" name="name" placeholder="Name"><br>
-					<input type="text" name="instruments" placeholder="Instrument(s)"><br>
-					<div class="note">Separate multiple instruments with a comma.</div>
-					<input type="submit" value="Submit" id="submit">
-				</form>
-			<!-- <button id="nextButton">Next</button> -->
-			</div>
-
-			<div id="albumArt">
-			Album images
-				<form action="" method="get" name="form">
-					<select>
-						<option value="cover">Album cover</option>	
-					</select>
-					<input type="submit" value="Submit" id="submit">
-				</form>
-			<!-- <button id="nextButton">Next</button> -->
-			</div>
+		<div id="addMembersNote">Separate multiple instruments with a comma.</div>
+			
 
 	</body>
 </html>
