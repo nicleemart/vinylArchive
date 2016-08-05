@@ -140,7 +140,8 @@ window.addEventListener("load", function() {
             document.getElementById("wrapper").appendChild(addArtistImage);
 
     });
-        submit3.addEventListener("click", function(form) {
+        
+    submit3.addEventListener("click", function(form) {
 
         form.preventDefault();
 
@@ -168,7 +169,7 @@ window.addEventListener("load", function() {
 
     });
 
-        submit4.addEventListener("click", function(form) {
+    submit4.addEventListener("click", function(form) {
 
         form.preventDefault();
 
@@ -179,6 +180,7 @@ window.addEventListener("load", function() {
             addAlbumImageInput.style.display = "none";
             albumImagesText.style.display = "none";
             submit4.style.display = "none";
+            submit5.style.display = "block";
 
             var addAlbumGenre = document.createElement("input");
             addAlbumGenre.setAttribute("type", "text");
@@ -200,6 +202,37 @@ window.addEventListener("load", function() {
             selectAlbumFormat.setAttribute("value", "Album Format");
             selectAlbumFormat.id = "albumFormat";
             document.getElementById("wrapper").appendChild(selectAlbumFormat);
+
+    });
+
+    submit5.addEventListener("click", function(form) {
+
+        form.preventDefault();
+
+            var addAlbumGenreInput = document.getElementById("albumGenre");
+            var addReleaseDateInput = document.getElementById("releaseDate");
+            var addAlbumFormatInput = document.getElementById("albumFormat");
+
+            addAlbumGenreInput.style.display = "none";
+            addReleaseDateInput.style.display = "none";
+            addAlbumFormatInput.style.display = "none";
+            submit5.style.display = "none";
+
+            var addTrackTitle = document.createElement("input");
+            addTrackTitle.setAttribute("type", "text");
+            addTrackTitle.setAttribute("placeholder", "Track title");
+            addTrackTitle.setAttribute("name", "trackTitle");
+            addTrackTitle.id = "trackTitle";
+            addTrackTitle.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addTrackTitle);
+
+            var addSong = document.createElement("input");
+            addSong.setAttribute("type", "file");
+            addSong.setAttribute("placeholder", "Upload song");
+            addSong.setAttribute("name", "song");
+            addSong.id = "song";
+            addSong.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addSong);
 
     });
 
