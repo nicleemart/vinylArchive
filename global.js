@@ -49,6 +49,7 @@ window.addEventListener("load", function() {
                     albumArtistDiv.style.display = "none";
                     addMembersText.style.display = "block";
                     submit2.style.display = "block";
+
                     var addMember = document.createElement("input");
                     addMember.setAttribute("type", "text");
                     addMember.setAttribute("placeholder", "Name");
@@ -93,7 +94,6 @@ window.addEventListener("load", function() {
         addAdditionalMember.setAttribute("name", "member" + memberNumber);
         addAdditionalMember.className = "memberInput";
         addAdditionalMember.id = "newMember" + memberNumber;
-
         document.getElementById("wrapper").appendChild(addAdditionalMember);
 
         var addAdditionalInstrument = document.createElement("input");
@@ -103,6 +103,36 @@ window.addEventListener("load", function() {
         addAdditionalInstrument.className = "memberInput";
         addAdditionalInstrument.id = "newInstrument" + memberNumber;
         document.getElementById("wrapper").appendChild(addAdditionalInstrument);
+    });
+
+    submit2.addEventListener("click", function(form) {
+
+        form.preventDefault();
+
+            var currentMemberInput = document.getElementById("newMember" + memberNumber);
+            var currentInstrumentInput = document.getElementById("newInstrument" + memberNumber);
+
+            currentMemberInput.style.display = "none";
+            currentInstrumentInput.style.display = "none";
+            addMembersText.style.display = "none";
+            addMembersNote.style.display = "none";
+
+            var addLocation = document.createElement("input");
+            addLocation.setAttribute("type", "text");
+            addLocation.setAttribute("placeholder", "City name...");
+            addLocation.setAttribute("name", "location");
+            addLocation.id = "location";
+            addLocation.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addLocation);
+
+            var addAlbumImage = document.createElement("input");
+            addAlbumImage.setAttribute("type", "file");
+            addAlbumImage.setAttribute("placeholder", "Choose File");
+            addAlbumImage.setAttribute("name", "image");
+            addAlbumImage.id = "image";
+            addAlbumImage.className = "memberInput";
+            document.getElementById("wrapper").appendChild(addAlbumImage);
+
     });
 
 });
